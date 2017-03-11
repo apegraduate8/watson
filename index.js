@@ -57,30 +57,46 @@ const alchemy = AlchemyLanguage.alchemy_language({
               return console.log("this is the error " + err)
             }
             else {
-              let reqData = JSON.stringify(response, null, 2);
+             // let reqData = JSON.stringify(response, null, 2);
+
+              //    const pry = require('pryjs')
+              // eval(pry.it);
+
 
               // console.log("myCHecker>>>>", sentenceChecker);
-              console.log(response.keywords);
+          //    console.log(response.keywords);
 
               let yes = new sentenceChecker(response);
+
+              //  const pry = require('pryjs')
+             // eval(pry.it);
+
+          //    console.log("*******************************", reqData)
+
               // console.log(JSON.stringify(response, null, 2));
+                  yes.Mapping();
 
-                console.log("//////////////////////////////////////////////////////////")
-                console.log(yes.data)
-                 console.log("//////////////////////////////////////////////////////////")
-
-
-                   console.log("////////////////////////KEYWORDS//////////////////////////////////")
-                console.log(yes.keywords);
-                   console.log("////////////////////////////////////////////////////RELATIONSSSS/////")
-                console.log(yes.relations);
-                yes.Mapping();
-                 console.log("////////////////////////////////////////////////////SENTENCESSSS/////")
-                console.log(yes.sentences);
+                  yes.combineData();
+                // console.log("//////////////////////////////////////////////////////////")
+                // console.log(yes.data)
+                //  console.log("//////////////////////////////////////////////////////////")
 
 
+                //    console.log("////////////////////////KEYWORDS//////////////////////////////////")
+                // console.log(yes.keywords);
+                //    console.log("////////////////////////////////////////////////////RELATIONSSSS/////")
+                // console.log(yes.relations);
 
-                // res.send(arm);
+                //  console.log("////////////////////////////////////////////////////SENTENCESSSS/////")
+                // console.log(yes.sentences);
+                //  console.log("////////////////////////////////////////////////////SUBJECTS/////")
+                // console.log(yes.subjectText);
+                //    console.log("////////////////////////////////////////////////////ACTIONS/////")
+                // console.log(yes.actionText);
+
+
+
+                res.send(yes.combinedText);
 
             }
       });
