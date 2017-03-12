@@ -7,12 +7,30 @@
 }
 
 .create {
-  width: 300px;
+  width: 250px;
   margin: 10px;
   padding: 5px;
   font-size: .8rem;
   position: fixed;
   left: 0;
+}
+
+.briefSave {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#brief {
+  width: 50%;
+  margin-right: 2px;
+}
+
+.create #briefTitle {
+  font-size: 1rem;
+  font-weight: 900;
+  font-style: italic;
 }
 
 .create p {
@@ -21,14 +39,14 @@
 }
 
 .small-container {
-    width: 50%;
+    width: 60%;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
 }
 .small-container h1 {
-  font-size: 1.8em;
+  font-size: 1.5em;
 }
 
 .box {
@@ -53,4 +71,24 @@ button {
 #summary {
   font-size: 3rem;
   font-weight: 800;
+  height: inherit;
+  overflow: scroll;
 }
+
+ #title {
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 2.5px;
+  font-style: italic;
+}
+
+.hover:hover {
+  color: rgba(32, 17, 17, 0.51);
+}
+
+
+
+
+
+
+

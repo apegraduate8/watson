@@ -22,7 +22,7 @@
            //    }
 
          });
-           console.log("++++++++++", noDups)
+           // console.log("++++++++++", noDups)
    //         // console.log("in fix function /////////// ", arr);
    //         //  var j = 1;
    //         //  for (var i = 0; i < arr.length; i++) {            ///////
@@ -47,14 +47,18 @@
 
 let Results = function(data) {
     this.data = data,
-    this.keywords = this.data.keywords,
+    this.title = data.title,
+    this.website = data.url,
+    this.keywords = data.keywords,
     this.entities = data.entities,
     this.relations = data.relations,
     this.sentences = [],
     this.subjectText = [],
     this.actionText = [],
     this.objectText = [],
+    this.keywordsText = [],
     this.combinedText = [],
+    this.combinedSentences = [],
     this.combineData = () => {
       //console.log("++++++++++++++=+++++++=", this.subjectText)
       this.subjectText.forEach((x, index) => {
@@ -67,7 +71,7 @@ let Results = function(data) {
 
 
       this.combinedText = fix(this.combinedText);
-
+      this.combinedSentences = fix(this.sentences)
 
       });
     },
@@ -86,12 +90,17 @@ let Results = function(data) {
                   console.log('!!!!!!nope')
               }
 
-
       });
 
-      // fix(this.subjectText);
-      // fix(this.actionText);
-      // fix(this.objectText);
+
+    },
+    this.keyPush = () => {
+        this.keywords.forEach((key) => {
+
+          if(key === undefined) {return false}
+              this.keywordsText.push(key.text);
+
+      });
     }
 
 
